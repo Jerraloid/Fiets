@@ -1,6 +1,7 @@
 package fiets.graphics;
 
 import fiets.entity.mob.Player;
+import fiets.level.Sizes;
 import fiets.level.tile.Tile;
 import java.util.Random;
 
@@ -59,22 +60,22 @@ public class Screen {
         xPosition -= xOffset; //zodat de map naar links beweegt als je naar rechts loopt
         yPosition -= yOffset; //zodat de map naar boven gaat als je naar onder loopt
         
-        for (int y = 0; y < 32; y++) {
+        for (int y = 0; y < Sizes.PLAYER.getSize(); y++) {
             int yAbsolute = y + yPosition;
             
             int ySprite = y;
-            if (flip == 2 || flip == 3) ySprite = 31 - y; //draait de image verticaal
+            if (flip == 2 || flip == 3) ySprite = Sizes.PLAYER.getSize() - 1 - y; //draait de image verticaal
             
-            for (int x = 0; x < 32; x++) {
+            for (int x = 0; x < Sizes.PLAYER.getSize(); x++) {
                 int xAbsolute = x + xPosition;
                 
                 int xSprite = x;
-                if (flip == 1 || flip == 3) xSprite = 31 - x; //draait de image horizontaal
+                if (flip == 1 || flip == 3) xSprite = Sizes.PLAYER.getSize() - 1 - x; //draait de image horizontaal
                 
-                if(xAbsolute < -32 || xAbsolute >= width || yAbsolute < 0 || yAbsolute >= height) break; //rendert alleen de tiles op het scherm
+                if(xAbsolute < -Sizes.PLAYER.getSize() || xAbsolute >= width || yAbsolute < 0 || yAbsolute >= height) break; //rendert alleen de tiles op het scherm
                 if (xAbsolute < 0) xAbsolute = 0;
                 
-                int col = sprite.pixels[xSprite + ySprite * 32]; //alle pixels van de sprite op het spritesheet (van de player)
+                int col = sprite.pixels[xSprite + ySprite * Sizes.PLAYER.getSize()]; //alle pixels van de sprite op het spritesheet (van de player)
                 if (col != 0xff9700FF) { //laat alles wat paars is, transparant
                     pixels[xAbsolute+yAbsolute*width] = col;
                 }

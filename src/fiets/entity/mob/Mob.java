@@ -7,6 +7,7 @@ package fiets.entity.mob;
 
 import fiets.entity.Entity;
 import fiets.graphics.Sprite;
+import fiets.level.Sizes;
 
 /**
  *
@@ -24,7 +25,7 @@ public abstract class Mob extends Entity {
         if (yAs > 0) dir = 2;
         if (yAs < 0) dir = 0;
         
-        if (!collision()) {
+        if (!collision(xAs, yAs)) {
             x += xAs;
             y += yAs;
         }
@@ -35,8 +36,13 @@ public abstract class Mob extends Entity {
         
     }
     
-    private boolean collision() {
-        return false;
+    private boolean collision(int xAs, int yAs) {
+        boolean solid = false;
+        
+        if (level.getTile((x + xAs)/Sizes.TILE.getSize(), (y + yAs)/Sizes.TILE.getSize()).solid()) 
+            solid = true;
+        
+        return solid;
     }
     
     public void render() {

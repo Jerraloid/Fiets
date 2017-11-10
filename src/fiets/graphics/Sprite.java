@@ -5,6 +5,8 @@
  */
 package fiets.graphics;
 
+import fiets.level.Sizes;
+
 /**
  *
  * @author Jerry
@@ -16,24 +18,24 @@ public class Sprite {
     public int[] pixels;
     private SpriteSheet sheet;
     
-    public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles);
-    public static Sprite flower = new Sprite(16, 1, 0, SpriteSheet.tiles);
-    public static Sprite rock = new Sprite(16, 2, 0, SpriteSheet.tiles);
-    public static Sprite thonking = new Sprite(16, 3, 0, SpriteSheet.tiles);
-    public static Sprite voidSprite = new Sprite(16, 0xb7248d);
+    public static Sprite grass = new Sprite(Sizes.TILE.getSize(), 0, 0, SpriteSheet.tiles);
+    public static Sprite flower = new Sprite(Sizes.TILE.getSize(), 1, 0, SpriteSheet.tiles);
+    public static Sprite rock = new Sprite(Sizes.TILE.getSize(), 2, 0, SpriteSheet.tiles);
+    public static Sprite thonking = new Sprite(Sizes.TILE.getSize(), 3, 0, SpriteSheet.tiles);
+    public static Sprite voidSprite = new Sprite(Sizes.TILE.getSize(), 0xb7248d);
     
-    public static Sprite player_up = new Sprite(32, 0, 5, SpriteSheet.tiles);
-    public static Sprite player_down = new Sprite(32, 2, 5, SpriteSheet.tiles);
-    public static Sprite player_side = new Sprite(32, 1, 5, SpriteSheet.tiles);
+    public static Sprite player_up = new Sprite(Sizes.PLAYER.getSize(), 0, 5, SpriteSheet.tiles);
+    public static Sprite player_down = new Sprite(Sizes.PLAYER.getSize(), 2, 5, SpriteSheet.tiles);
+    public static Sprite player_side = new Sprite(Sizes.PLAYER.getSize(), 1, 5, SpriteSheet.tiles);
     
-    public static Sprite player_up_1 = new Sprite(32, 0, 6, SpriteSheet.tiles);
-    public static Sprite player_up_2 = new Sprite(32, 0, 7, SpriteSheet.tiles);
+    public static Sprite player_up_1 = new Sprite(Sizes.PLAYER.getSize(), 0, 6, SpriteSheet.tiles);
+    public static Sprite player_up_2 = new Sprite(Sizes.PLAYER.getSize(), 0, 7, SpriteSheet.tiles);
     
-    public static Sprite player_down_1 = new Sprite(32, 2, 6, SpriteSheet.tiles);
-    public static Sprite player_down_2 = new Sprite(32, 2, 7, SpriteSheet.tiles);
+    public static Sprite player_down_1 = new Sprite(Sizes.PLAYER.getSize(), 2, 6, SpriteSheet.tiles);
+    public static Sprite player_down_2 = new Sprite(Sizes.PLAYER.getSize(), 2, 7, SpriteSheet.tiles);
     
-    public static Sprite player_side_1 = new Sprite(32, 1, 6, SpriteSheet.tiles);
-    public static Sprite player_side_2 = new Sprite(32, 1, 7, SpriteSheet.tiles);
+    public static Sprite player_side_1 = new Sprite(Sizes.PLAYER.getSize(), 1, 6, SpriteSheet.tiles);
+    public static Sprite player_side_2 = new Sprite(Sizes.PLAYER.getSize(), 1, 7, SpriteSheet.tiles);
     
     public Sprite(int size, int x, int y, SpriteSheet sheet) {
         SIZE = size;

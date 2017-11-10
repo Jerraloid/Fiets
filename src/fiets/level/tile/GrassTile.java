@@ -7,6 +7,7 @@ package fiets.level.tile;
 
 import fiets.graphics.Screen;
 import fiets.graphics.Sprite;
+import fiets.level.Sizes;
 
 /**
  *
@@ -20,7 +21,7 @@ public class GrassTile extends Tile {
     
     @Override
     public void render(int x, int y, Screen screen) {
-        screen.renderTile(x << 4, y << 4, this);
+        screen.renderTile(x << (int)(Math.sqrt((double)Sizes.TILE.getSize())), y << (int)(Math.sqrt((double)Sizes.TILE.getSize())), this);
     }
     
 }

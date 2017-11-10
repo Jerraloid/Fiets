@@ -12,7 +12,7 @@ package fiets.level;
 public class TileCoor {
     
     private int x, y;
-    private final int TILE_SIZE = 16;
+    private final int TILE_SIZE = Sizes.TILE.getSize();
     
     public TileCoor(int x, int y) {
         this.x = x * TILE_SIZE;

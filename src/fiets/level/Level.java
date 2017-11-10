@@ -50,10 +50,10 @@ public class Level {
     
     public void render(int xScroll, int yScroll, Screen screen) {
         screen.setOffset(xScroll, yScroll);
-        int x0 = xScroll >> 4; //coordinaat van linkerkant van het scherm
-        int x1 = (xScroll + screen.width + 16) >> 4; //rechterkant van het scherm
-        int y0 = yScroll >> 4; //bovenkant
-        int y1 = (yScroll + screen.height + 16) >> 4; //onderkant
+        int x0 = xScroll >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //coordinaat van linkerkant van het scherm
+        int x1 = (xScroll + screen.width + Sizes.TILE.getSize()) >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //rechterkant van het scherm
+        int y0 = yScroll >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //bovenkant
+        int y1 = (yScroll + screen.height + Sizes.TILE.getSize()) >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //onderkant
         
         for (int y = y0; y < y1; y++) {
             for (int x = x0; x < x1; x++) {
