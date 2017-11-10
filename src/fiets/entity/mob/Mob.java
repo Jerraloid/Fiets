@@ -20,6 +20,12 @@ public abstract class Mob extends Entity {
     protected boolean moving = false;
     
     public void move(int xAs, int yAs) {
+        if (xAs != 0 && yAs != 0) {
+            move(xAs, 0);
+            move(0, yAs);
+            return;
+        }
+        
         if (xAs > 0) dir = 1;
         if (xAs < 0) dir = 3;
         if (yAs > 0) dir = 2;
@@ -38,9 +44,14 @@ public abstract class Mob extends Entity {
     
     private boolean collision(int xAs, int yAs) {
         boolean solid = false;
-        
-        if (level.getTile((x + xAs)/Sizes.TILE.getSize(), (y + yAs)/Sizes.TILE.getSize()).solid()) 
+        for (int i = 0; i < 4; i++) { //4 want er zijn 4 kanten op een tile
+            int xKant = ((x + xAs) + i % 2 * 12 - 7) / Sizes.TILE.getSize();
+            int yKant = ((y + yAs) + i / 2 * 12 + 3) / Sizes.TILE.getSize();
+            
+            if (level.getTile(xKant, yKant).solid()) 
             solid = true;
+        }
+        
         
         return solid;
     }
