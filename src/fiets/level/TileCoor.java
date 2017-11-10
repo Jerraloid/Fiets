@@ -15,16 +15,44 @@ public class TileCoor {
     private final int TILE_SIZE = Sizes.TILE.getSize();
     
     public TileCoor(int x, int y) {
-        this.x = x * TILE_SIZE;
-        this.y = y * TILE_SIZE;
+        this.x = x;
+        this.y = y;
     }
     
-    public int x() {
-        return x;
+    /**
+     * veranderd een coordinaat per tile naar een coordinaat per pixel
+     * 
+     * @return coordinaat per pixel
+     */
+    public int xToPixel() {
+        return x << (int)(Math.sqrt((double)TILE_SIZE)); //doet x * 16, maar het staat zo genoteerd voor performance
     }
     
-    public int y() {
-        return y;
+    /**
+     * veranderd een coordinaat per tile naar een coordinaat per pixel
+     * 
+     * @return coordinaat per pixel
+     */
+    public int yToPixel() {
+        return y << (int)(Math.sqrt((double)TILE_SIZE));
+    }
+    
+    /**
+     * veranderd een coordinaat per pixel, in een coordinaat per tile
+     * 
+     * @return coordinaat per tile
+     */
+    public int xToTile() {
+        return x >> (int)(Math.sqrt((double)TILE_SIZE)); //doet x / 16
+    }
+    
+    /**
+     * veranderd een coordinaat per pixel, in een coordinaat per tile
+     * 
+     * @return coordinaat per tile
+     */
+    public int yToTile() {
+        return y >> (int)(Math.sqrt((double)TILE_SIZE));
     }
     
     public int[] xy() {

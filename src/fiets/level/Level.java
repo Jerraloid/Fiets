@@ -50,10 +50,14 @@ public class Level {
     
     public void render(int xScroll, int yScroll, Screen screen) {
         screen.setOffset(xScroll, yScroll);
-        int x0 = xScroll >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //coordinaat van linkerkant van het scherm
-        int x1 = (xScroll + screen.width + Sizes.TILE.getSize()) >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //rechterkant van het scherm
-        int y0 = yScroll >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //bovenkant
-        int y1 = (yScroll + screen.height + Sizes.TILE.getSize()) >> (int)(Math.sqrt((double)Sizes.TILE.getSize())); //onderkant
+        
+        TileCoor scrollCoor1 = new TileCoor(xScroll, yScroll); //is voor boven en links
+        TileCoor scrollCoor2 = new TileCoor(xScroll + screen.width + Sizes.TILE.getSize(), yScroll + screen.height + Sizes.TILE.getSize()); //is voor rechts en onder
+        
+        int x0 = scrollCoor1.xToTile(); //coordinaat van linkerkant van het scherm
+        int x1 = scrollCoor2.xToTile();
+        int y0 = scrollCoor1.yToTile(); //bovenkant
+        int y1 = scrollCoor2.yToTile(); //onderkant
         
         for (int y = y0; y < y1; y++) {
             for (int x = x0; x < x1; x++) {
@@ -62,11 +66,7 @@ public class Level {
         }
     }
     
-    //grass = 0x00FF21
-    //flower = 0xFF0000
-    //rock = 0x808080
-    //thonking = 0xFFD800
-    public Tile getTile(int x, int y) {
+    public Tile getTile(int x, int y) { //WERKT MET TILE COORDINATEN, NIET MET PIXELS
         if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile; //ga je out of map? geef een void tile
         
         if (tiles[x+y*width] == Tile.COL_GRASS) return Tile.grass;

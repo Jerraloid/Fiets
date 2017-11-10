@@ -8,6 +8,7 @@ package fiets.entity.mob;
 import fiets.graphics.Screen;
 import fiets.graphics.Sprite;
 import fiets.input.Keyboard;
+import fiets.level.Sizes;
 
 /**
  *
@@ -102,7 +103,7 @@ public class Player extends Mob {
             }
         }
         
-        screen.renderPlayer(x-16, y-16, sprite, flip);
+        screen.renderPlayer(x-(Sizes.PLAYER.getSize() / 2), y-(Sizes.PLAYER.getSize() / 2), sprite, flip);
     }
     
 }

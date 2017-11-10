@@ -18,10 +18,4 @@ public class FlowerTile extends Tile {
     public FlowerTile(Sprite sprite) {
         super(sprite);
     }
-    
-    @Override
-    public void render(int x, int y, Screen screen) {
-        screen.renderTile(x << (int)(Math.sqrt((double)Sizes.TILE.getSize())), y << (int)(Math.sqrt((double)Sizes.TILE.getSize())), this);
-    }
-    
 }

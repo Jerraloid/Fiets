@@ -7,12 +7,14 @@ package fiets.level.tile;
 
 import fiets.graphics.Screen;
 import fiets.graphics.Sprite;
+import fiets.level.Sizes;
+import fiets.level.TileCoor;
 
 /**
  *
  * @author Jerry
  */
-public class Tile {
+public abstract class Tile {
     
     public int x, y;
     public Sprite sprite;
@@ -33,7 +35,8 @@ public class Tile {
     }
     
     public void render(int x, int y, Screen screen) {
-        
+        TileCoor tilePos = new TileCoor(x, y);
+        screen.renderTile(tilePos.xToPixel(), tilePos.yToPixel(), this);
     }
     
     public boolean solid() {

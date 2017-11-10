@@ -55,7 +55,7 @@ public class Fiets extends Canvas implements Runnable {
         key = new Keyboard();
         level = Level.spawn;
         TileCoor playerSpawn = new TileCoor(8, 8);
-        player = new Player(playerSpawn.x(), playerSpawn.y(), key);
+        player = new Player(playerSpawn.xToPixel(), playerSpawn.yToPixel(), key);
         player.init(level);
         
         addKeyListener(key);
