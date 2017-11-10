@@ -20,7 +20,7 @@ public abstract class Mob extends Entity {
     protected boolean moving = false;
     
     public void move(int xAs, int yAs) {
-        if (xAs != 0 && yAs != 0) {
+        if (xAs != 0 && yAs != 0) { //zorgt ervoor dat je langs de muur kan sliden
             move(xAs, 0);
             move(0, yAs);
             return;
@@ -49,7 +49,7 @@ public abstract class Mob extends Entity {
             int yKant = ((y + yAs) + i / 2 * 12 + 3) / Sizes.TILE.getSize();
             
             if (level.getTile(xKant, yKant).solid()) 
-            solid = true;
+                solid = true;
         }
         
         
