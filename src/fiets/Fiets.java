@@ -19,6 +19,7 @@ import fiets.input.Keyboard;
 import fiets.level.Level;
 import fiets.level.RandomLevel;
 import fiets.level.SpawnLevel;
+import fiets.level.TileCoor;
 
 /**
  *
@@ -52,8 +53,9 @@ public class Fiets extends Canvas implements Runnable {
         frame = new JFrame();
         
         key = new Keyboard();
-        level = new SpawnLevel("/levels/level.png");
-        player = new Player(8*16, 8*16, key);
+        level = Level.spawn;
+        TileCoor playerSpawn = new TileCoor(8, 8);
+        player = new Player(playerSpawn.x(), playerSpawn.y(), key);
         
         addKeyListener(key);
     }

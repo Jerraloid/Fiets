@@ -23,6 +23,11 @@ public class Tile {
     public static Tile thonking = new ThonkingTile(Sprite.thonking);
     public static Tile voidTile = new VoidTile(Sprite.voidSprite);
     
+    public static final int COL_GRASS = 0xff00FF21;
+    public static final int COL_FLOWER = 0xffFF0000;
+    public static final int COL_ROCK = 0xff808080;
+    public static final int COL_THONKING = 0xffFFD800;
+    
     Tile(Sprite sprite) {
         this.sprite = sprite;
     }

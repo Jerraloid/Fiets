@@ -18,6 +18,8 @@ public class Level {
     protected int[] tilesInt;
     protected int[] tiles;
     
+    public static Level spawn = new SpawnLevel("/levels/level.png");
+    
     public Level(int width, int height) {
         this.width = width;
         this.height = height;
@@ -67,10 +69,10 @@ public class Level {
     public Tile getTile(int x, int y) {
         if (x < 0 || y < 0 || x >= width || y >= height) return Tile.voidTile; //ga je out of map? geef een void tile
         
-        if (tiles[x+y*width] == 0xff00FF21) return Tile.grass;
-        if (tiles[x+y*width] == 0xffFF0000) return Tile.flower;
-        if (tiles[x+y*width] == 0xff808080) return Tile.rock;
-        if (tiles[x+y*width] == 0xffFFD800) return Tile.thonking;
+        if (tiles[x+y*width] == Tile.COL_GRASS) return Tile.grass;
+        if (tiles[x+y*width] == Tile.COL_FLOWER) return Tile.flower;
+        if (tiles[x+y*width] == Tile.COL_ROCK) return Tile.rock;
+        if (tiles[x+y*width] == Tile.COL_THONKING) return Tile.thonking;
         
         return Tile.voidTile;
     }
