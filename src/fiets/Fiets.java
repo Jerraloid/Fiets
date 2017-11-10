@@ -84,7 +84,7 @@ public class Fiets extends Canvas implements Runnable {
     public void run() {
         long lastTime = System.nanoTime();
         long timer = System.currentTimeMillis();
-        final double ns = 1000000000.0 / 60.0; //1 nanoseconde
+        final double ns = 1000000000.0 / 60; //1 nanoseconde / 60, zodat ie 60 updates per seconde doet
         double delta = 0;
         
         int frames = 0;
@@ -108,7 +108,7 @@ public class Fiets extends Canvas implements Runnable {
             
             if (System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                frame.setTitle(title + "  |  " + updates + "ups, " + frames + " fps");
+                frame.setTitle(title + "  |  " + updates + "ups, " + frames + " fps"); //ups = updates per second, fps = frames per second
                 updates = 0;
                 frames = 0;
             }
