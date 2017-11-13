@@ -57,8 +57,8 @@ public class Screen {
     }
     
     public void renderPlayer(int xPosition, int yPosition, Sprite sprite, int flip) {
-        xPosition -= xOffset; //zodat de map naar links beweegt als je naar rechts loopt
-        yPosition -= yOffset; //zodat de map naar boven gaat als je naar onder loopt
+        xPosition -= xOffset; //zodat de player naar links beweegt als je naar rechts loopt
+        yPosition -= yOffset; //zodat de player naar boven gaat als je naar onder loopt
         
         for (int y = 0; y < Sizes.PLAYER.getSize(); y++) {
             int yAbsolute = y + yPosition;
