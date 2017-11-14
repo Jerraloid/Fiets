@@ -45,8 +45,8 @@ public abstract class Mob extends Entity {
     private boolean collision(int xAs, int yAs) {
         boolean solid = false;
         for (int i = 0; i < 4; i++) { //4 want er zijn 4 kanten op een tile
-            int xKant = ((x + xAs) + i % 2 * 12 - 7) / Sizes.TILE.getSize();
-            int yKant = ((y + yAs) + i / 2 * 12 + 3) / Sizes.TILE.getSize();
+            int xKant = ((x + xAs) + i % 2 * 15) / Sizes.TILE.getSize();
+            int yKant = ((y + yAs) + i / 2 * 15 ) / Sizes.TILE.getSize();
             
             if (level.getTile(xKant, yKant).solid()) 
                 solid = true;

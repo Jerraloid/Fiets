@@ -36,7 +36,7 @@ public abstract class Tile {
     
     public void render(int x, int y, Screen screen) {
         TileCoor tilePos = new TileCoor(x, y);
-        screen.renderTile(tilePos.xToPixel(), tilePos.yToPixel(), this);
+        screen.renderTile(tilePos.xToPixel() - (Sizes.TILE.getSize() / 2), tilePos.yToPixel() - (Sizes.TILE.getSize() / 2), this);
     }
     
     public boolean solid() {

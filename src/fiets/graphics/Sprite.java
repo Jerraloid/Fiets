@@ -24,18 +24,17 @@ public class Sprite {
     public static Sprite thonking = new Sprite(Sizes.TILE.getSize(), 3, 0, SpriteSheet.tiles);
     public static Sprite voidSprite = new Sprite(Sizes.TILE.getSize(), 0xb7248d);
     
-    public static Sprite player_up = new Sprite(Sizes.PLAYER.getSize(), 0, 5, SpriteSheet.tiles);
-    public static Sprite player_down = new Sprite(Sizes.PLAYER.getSize(), 2, 5, SpriteSheet.tiles);
-    public static Sprite player_side = new Sprite(Sizes.PLAYER.getSize(), 1, 5, SpriteSheet.tiles);
+    public static Sprite player_up = new Sprite(Sizes.PLAYER.getSize(), 0, 13, SpriteSheet.tiles);
+    public static Sprite player_down = new Sprite(Sizes.PLAYER.getSize(), 2, 13, SpriteSheet.tiles);
+    public static Sprite player_side = new Sprite(Sizes.PLAYER.getSize(), 1, 13, SpriteSheet.tiles);
     
-    public static Sprite player_up_1 = new Sprite(Sizes.PLAYER.getSize(), 0, 6, SpriteSheet.tiles);
-    public static Sprite player_up_2 = new Sprite(Sizes.PLAYER.getSize(), 0, 7, SpriteSheet.tiles);
+    public static Sprite player_up_1 = new Sprite(Sizes.PLAYER.getSize(), 0, 14, SpriteSheet.tiles);
+    public static Sprite player_up_2 = new Sprite(Sizes.PLAYER.getSize(), 0, 15, SpriteSheet.tiles);
     
-    public static Sprite player_down_1 = new Sprite(Sizes.PLAYER.getSize(), 2, 6, SpriteSheet.tiles);
-    public static Sprite player_down_2 = new Sprite(Sizes.PLAYER.getSize(), 2, 7, SpriteSheet.tiles);
+    public static Sprite player_down_1 = new Sprite(Sizes.PLAYER.getSize(), 2, 14, SpriteSheet.tiles);
+    public static Sprite player_down_2 = new Sprite(Sizes.PLAYER.getSize(), 2, 15, SpriteSheet.tiles);
     
-    public static Sprite player_side_1 = new Sprite(Sizes.PLAYER.getSize(), 1, 6, SpriteSheet.tiles);
-    public static Sprite player_side_2 = new Sprite(Sizes.PLAYER.getSize(), 1, 7, SpriteSheet.tiles);
+    public static Sprite player_side_1 = new Sprite(Sizes.PLAYER.getSize(), 1, 14, SpriteSheet.tiles);
     
     public Sprite(int size, int x, int y, SpriteSheet sheet) {
         SIZE = size;
