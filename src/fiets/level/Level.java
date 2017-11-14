@@ -53,6 +53,7 @@ public class Level {
         
         TileCoor scrollCoor1 = new TileCoor(xScroll, yScroll); //is voor boven en links
         TileCoor scrollCoor2 = new TileCoor(xScroll + screen.width + (Sizes.TILE.getSize() * 2), yScroll + screen.height + (Sizes.TILE.getSize() * 2)); //is voor rechts en onder
+        //de tilesize * 2 wordt hierboven meegegeven om zwarte balken te voorkomen
         
         int x0 = scrollCoor1.xToTile(); //coordinaat van linkerkant van het scherm
         int x1 = scrollCoor2.xToTile();
